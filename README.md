@@ -105,7 +105,7 @@ You have to forward port by entering a command in their local pc powershell comm
 ssh -L 3000:localhost:3000 root@Server_IP -p SSH_PORT
 ```
 * Make sure you enter the command in your own local Windows Powershell cmd and NOT your VPS terminal.
-* This prompts you to enter your VPS password (it wont be visible), when you enter it, you connect and tunnel to your vps
+* This prompts you to enter your VPS password (it won't be visible), when you enter it, you connect and tunnel to your vps
 * Now go to browser and open `http://localhost:3000/` and login
 
 **4- Login with your preferred method**
@@ -143,7 +143,7 @@ Alternatively:
 Search you `Node ID` here with `/check` here: https://t.me/gensyntrackbot 
 * `Node-ID` is near your Node name
 
-* If receiving `EVM Wallet: 0x0000000000000000000000000000000000000000`, your `onchain-participation` is not being tracked and you have to Install with `New Email` and ***Delete old `swarm.pem`*** by simply going to root folder and `rm -rf rl-swarm`
+* If receiving `EVM Wallet: 0x0000000000000000000000000000000000000000`, your `onchain-participation` is not being tracked and you have to Install with `New Email` and ***Delete old `swarm.pem`*** by simply going to root folder and pasting `rm -rf rl-swarm`
 
 Alternatively
 Use [this](https://gensyn-node.vercel.app/) site to check your node statistics.
