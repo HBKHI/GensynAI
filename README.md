@@ -172,9 +172,13 @@ cd ..
 ```
 
 ### Unable to access forwarded port gensyn site
+
 If you are ever in a situation where you need to restart your swarm and you cannot open localhost:3000 even after forwarding.
+
 1- Open the browser where you opened the site
+
 2- Clear cache history for a day
+
 3- Re open localhost:3000 and you should be able to login back
 
 ### Ran out of input
