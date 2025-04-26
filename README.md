@@ -1,5 +1,7 @@
 # GensynAI
 All you need to know about contributing to GensyAI using VPS only
+![image](https://github.com/user-attachments/assets/d663b050-b750-40d6-8f6a-068bfc8b7eb9)
+
 
 ## Hardware Requirements
 CPU: Minimum >= 16GB RAM (more RAM for larger model or dataset execution)
@@ -7,11 +9,18 @@ CPU: Minimum >= 16GB RAM (more RAM for larger model or dataset execution)
 Note: You can run the node without a GPU.
 
 ## VPS Renting
-Start by purchasing an appropriate VPS on Contabo or any other server hosting platform. 
+Start by purchasing an appropriate VPS on [Contabo](https://contabo.com/en/vps/) or any other server hosting platform. 
 
-You would get the ip address, password and port where you can access said VPS.
+**Selecting VPS type**
+1. Select the type of VPS specs, payment plan, region and storage type you please.
 
-Download Termius from their official website, create and establish your vps connection.
+2. Leave the remaining default options as they are and either generate a password or input your password and save it.
+
+3. After payment completion, you would get the ip address, password and port sent to your mail where you can access said VPS.
+
+4. Download [Termius](https://termius.com/download) from their official website.
+
+5. Create new connection, input vps ip address, and password (default port should be 22 and username should be root)
 
 ---
 
@@ -109,8 +118,7 @@ ssh -L 3000:localhost:3000 root@Server_IP -p SSH_PORT
 ---
 
 ### Node Name
-* Now your node started running, Find your name after word `Hello`, like mine is `whistling hulking armadillo` as in the image below (You can use `CTRL+SHIFT+F` to search Hello in terminal)
-
+* Now your node started running, Find your name after word `Hello`, it would essentially be three words, for example `leaping tenacoius dog`
 ---
 
 ### Screen commands
@@ -118,6 +126,9 @@ ssh -L 3000:localhost:3000 root@Server_IP -p SSH_PORT
 * Return: `screen -x swarm`
 * Reattach: `screen -r swarm`
 * Stop current swarm execution: `CTRL` + `C`
+* Terminate current swarm execution: `CTRL` + `D`
+
+Alternatively:
 * Stop and Kill: `screen -XS swarm quit`
 
 ---
@@ -125,12 +136,17 @@ ssh -L 3000:localhost:3000 root@Server_IP -p SSH_PORT
 # Node Health
 ### Official Dashboard
 * Top 100 round-participants: https://dashboard.gensyn.ai/
+<img width="1505" alt="image" src="https://github.com/user-attachments/assets/093b0954-275d-4c64-9ec3-19c8486e1328" />
+
 
 ### Telegram Bot
 Search you `Node ID` here with `/check` here: https://t.me/gensyntrackbot 
 * `Node-ID` is near your Node name
 
 * If receiving `EVM Wallet: 0x0000000000000000000000000000000000000000`, your `onchain-participation` is not being tracked and you have to Install with `New Email` and ***Delete old `swarm.pem`*** by simply going to root folder and `rm -rf rl-swarm`
+
+Alternatively
+Use [this](https://gensyn-node.vercel.app/) site to check your node statistics.
 
 ---
 
@@ -155,8 +171,14 @@ yarn upgrade && yarn add next@latest && yarn add viem@latest
 cd ..
 ```
 
+### Unable to access forwarded port gensyn site
+If you are ever in a situation where you need to restart your swarm and you cannot open localhost:3000 even after forwarding.
+1- Open the browser where you opened the site
+2- Clear cache history for a day
+3- Re open localhost:3000 and you should be able to login back
+
 ### Ran out of input
-Navigate:
+On your root folder, navigate:
 ```
 cd rl-swarm
 ```
@@ -164,4 +186,5 @@ Edit:
 ```
 nano hivemind_exp/configs/mac/grpo-qwen-2.5-0.5b-deepseek-r1.yaml
 ```
-* Lower `max_steps` to `5`
+* Lower `max_steps` to `10`
+* If issue persists,  Lower `max_steps` to `5`
